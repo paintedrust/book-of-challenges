@@ -1,4 +1,4 @@
 *.DS_Store
 *.vs/
-*bin/Debug/
-*obj/Debug/
+Debug/
+Release/
