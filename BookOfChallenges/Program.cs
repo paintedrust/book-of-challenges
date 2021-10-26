@@ -9,6 +9,10 @@ namespace BookOfChallenges
         private static readonly List<string> _challenges = new List<string>()
         {
             "Tell me a joke",
+            "What is your name?",
+            "Basic Geometry",
+            "Are we there yet?",
+            "How long have you been alive?"
         };
 
         private delegate void Run();
@@ -55,18 +59,30 @@ namespace BookOfChallenges
                 case ConsoleKey.D1:
                     challenge = Challenge1.Run;
                     break;
+                case ConsoleKey.D2:
+                    challenge = Challenge2.Run;
+                    break;
+                case ConsoleKey.D3:
+                    challenge = Challenge3.Run;
+                    break;
+                case ConsoleKey.D4:
+                    challenge = Challenge4.Run;
+                    break;
+                case ConsoleKey.D5:
+                    challenge = Challenge5.Run;
+                    break;
                 case ConsoleKey.Q:
                     Environment.Exit(0);
                     break;
             }
 
-            ConsoleKeyInfo repeat = new ConsoleKeyInfo();
+            ConsoleKeyInfo repeat;
 
             do
             {
                 challenge.Invoke();
-                System.Threading.Thread.Sleep(1000);
-                //Console.ReadKey();
+                //System.Threading.Thread.Sleep(1000);
+                Console.ReadKey();
                 Console.WriteLine("\nSpace to run again or back to menu with any other key...\n");
                 repeat = Console.ReadKey(true);
             }
@@ -83,7 +99,6 @@ namespace BookOfChallenges
 
         private static void Clear()
         {
-            Console.ReadKey();
             Console.Clear();
         }
     }

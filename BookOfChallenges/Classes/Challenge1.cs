@@ -34,7 +34,7 @@ namespace BookOfChallenges.Classes
 
             Console.ForegroundColor = Constants.GetRandomColour();
             Console.WriteLine(joke.Value);
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ResetColor();
         }
     }
 }

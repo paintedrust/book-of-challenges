@@ -5,8 +5,24 @@ namespace BookOfChallenges.Classes
     {
         public static void Run()
         {
-            float v = 9;
-            Console.WriteLine(v);
+            Console.WriteLine("What is your name?");
+            var name = Console.ReadLine();
+
+            switch (name.ToLower())
+            {
+                case "heisenberg":
+                    Console.WriteLine("You're God damn right");
+                    break;
+                case "bond":
+                    Console.WriteLine("James Bond");
+                    break;
+                case "voldermort":
+                    Console.WriteLine("Don't say the Name!");
+                    break;
+                default:
+                    Console.WriteLine("Hello " + name);
+                    break;
+            }
         }
     }
 }
