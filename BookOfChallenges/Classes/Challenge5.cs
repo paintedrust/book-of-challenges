@@ -5,25 +5,33 @@ namespace BookOfChallenges.Classes
     {
         public static void Run()
         {
-            string unit;
+            Console.WriteLine("Enter your date of birth.");            
 
-            do
+            Console.WriteLine("Year");
+            Int32.TryParse(Console.ReadLine(), out int year);
+            Console.WriteLine("\nMonth");
+            Int32.TryParse(Console.ReadLine(), out int month);
+            Console.WriteLine("\nDay");
+            Int32.TryParse(Console.ReadLine(), out int day);
+
+            try
             {
-                Console.WriteLine("What unit do you want your speed calculated? mph/kph");
-                unit = Console.ReadLine();
+                var dob = new DateTime(year, month, day);
+                var timeInDays = (DateTime.Now - dob).TotalDays;
+                var timeInSeconds = (DateTime.Now - dob).TotalSeconds;
+                var timeInHours = (DateTime.Now - dob).TotalHours;
 
-            } while (unit != "mph" && unit != "kph");
+                Console.WriteLine("\nYou've been alive for:");
+                Console.WriteLine(String.Format("{0:n0}", timeInDays) + " Days");
+                Console.WriteLine(String.Format("{0:n0}", timeInHours) + " Hours");
+                Console.WriteLine(String.Format("{0:n0}", timeInSeconds) + " Seconds");
+            }
+            catch
+            {
+                Console.WriteLine("Please don't push it, just enter a valid day/month/year and make everyones life easier.\nThank you");
+            }
 
-            var measurement = unit == "mph" ? "miles" : "kilometers";
-
-            Console.WriteLine($"In {measurement}, how far do you need to go?");
-            Int32.TryParse(Console.ReadLine(), out int distance);
-            Console.WriteLine("How long before you need to be there (mins)");
-            Int32.TryParse(Console.ReadLine(), out int minutes);
-
-            double speed = distance / (minutes / 60);
-
-            Console.WriteLine("You need to travel at " + speed + unit);
+            
         }
     }
 }
