@@ -31,9 +31,12 @@ x86/
 [Aa][Rr][Mm]64/
 bld/
 [Bb]in/
-obj/
+[Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
+#added by me 05/01/2024
+obj
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
