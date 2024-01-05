@@ -36,7 +36,7 @@ bld/
 [Ll]ogs/
 
 #added by me 05/01/2024
-obj/
+/obj
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
