@@ -12,7 +12,8 @@ namespace BookOfChallenges
             "What is your name?",
             "Basic Geometry",
             "Are we there yet?",
-            "How long have you been alive?"
+            "How long have you been alive?",
+            "Test your timing skills"
         };
 
         private delegate void Run();
@@ -70,6 +71,9 @@ namespace BookOfChallenges
                     break;
                 case ConsoleKey.D5:
                     challenge = Challenge5.Run;
+                    break;
+                case ConsoleKey.D6:
+                    challenge = Challenge6.Run;
                     break;
                 case ConsoleKey.Q:
                     Environment.Exit(0);
